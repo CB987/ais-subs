@@ -1,0 +1,21 @@
+{
+  "name": "ais-sub",
+  "version": "1.0.0",
+  "description": "in the terminal: npm init -y insert into package.json scripts:     \"reset-db\": \"dropdb AIS-subs; createdb AIS-subs\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reset-db": "dropdb AIS-subs; createdb AIS-subs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CB987/ais-subs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CB987/ais-subs/issues"
+  },
+  "homepage": "https://github.com/CB987/ais-subs#readme"
+}
