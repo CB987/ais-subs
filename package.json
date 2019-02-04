@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
     "reset-db": "dropdb AIS-subs; createdb AIS-subs; psql -f schema.sql AIS-subs; psql -f seed.sql AIS-subs"
   },
   "repository": {
@@ -20,5 +21,8 @@
   "homepage": "https://github.com/CB987/ais-subs#readme",
   "dependencies": {
     "pg-promise": "^8.5.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
   }
 }

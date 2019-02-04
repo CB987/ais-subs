@@ -1,2 +1,2 @@
-const faculty = require('./Faculty');
-const sub = require('./Sub');
+const faculty = require('./models/Faculty');
+const sub = require('./models/Sub');

@@ -10,9 +10,9 @@ const pgp = require('pg-promise')({
 });
 
 const db = pgp({
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    database: process.env.DB_NAME
+    host: 'localhost',
+    port: 5432,
+    database: 'AIS-subs'
 });
 
 module.exports = db;
