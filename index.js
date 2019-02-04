@@ -1,2 +1,2 @@
-const staff = require('./staff');
-const sub = require('./sub');
+const faculty = require('./Faculty');
+const sub = require('./Sub');
