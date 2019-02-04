@@ -1,4 +1,5 @@
 in the terminal:
 npm init -y
-insert into package.json scripts:
-    "reset-db": "dropdb AIS-subs; createdb AIS-subs"
+
+mkdir AIS-subs
+npm run reset-db to create and input sql
