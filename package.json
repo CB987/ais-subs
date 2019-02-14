@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/CB987/ais-subs#readme",
   "dependencies": {
+    "dotenv": "^6.2.0",
     "pg-promise": "^8.5.5"
   },
   "devDependencies": {

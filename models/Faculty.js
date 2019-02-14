@@ -1,4 +1,5 @@
-const db = require('db');
+const db = require('./db');
+
 
 class Faculty {
     constructor(id,
@@ -20,7 +21,7 @@ class Faculty {
     }
 
     //CREATE
-    static addFaculty(id,
+    static addFaculty(
         Faculty_Name,
         Last_Name,
         First_Name,
@@ -29,26 +30,26 @@ class Faculty {
         Track,
         Room) {
         return db.one(`
-    INSERT INTO Faculty_Master(
-        (   Faculty_Name,
-            Last_Name,
-            First_Name,
-            Job_Title,
-            Grade,
-            Track,
-            Room)
-        ) VALUES (
-            $1, $2, $3, $4, $5, $6, $7
-        ) returning id
-    ` [(Faculty_Name,
+        INSERT INTO Faculty_Master
+            (   Faculty_Name,
                 Last_Name,
                 First_Name,
                 Job_Title,
                 Grade,
                 Track,
-                Room)])
+                Room
+            ) VALUES (
+                $1, $2, $3, $4, $5, $6, $7
+            ) returning id
+        `, [Faculty_Name,
+                Last_Name,
+                First_Name,
+                Job_Title,
+                Grade,
+                Track,
+                Room])
             .then((newFaculty) => {
-                const theFaculty = new Faculty(
+                const FacultyMember = new Faculty(
                     newFaculty.id,
                     Faculty_Name,
                     Last_Name,
@@ -57,11 +58,15 @@ class Faculty {
                     Grade,
                     Track,
                     Room)
-                return theFaculty;
+                return FacultyMember
             })
+            .then(() => {
+                console.log(`${Faculty_Name} has been added`)
+            })
+
     };
 
-
 }
+
 
 module.exports = Faculty;
