@@ -51,4 +51,23 @@ const Sub = require('./models/Sub');
 // );
 
 //*****Retrieve All Subs */
-Sub.getSubs();
+// Sub.getSubs();
+
+//*****Update One Sub */
+// Sub.updateSub(
+//     148,
+//     "Clare",
+//     "Barton",
+//     "Clare",
+//     "knitting",
+//     "idk",
+//     "idk@sherlock.com",
+//     "777-999-0000",
+//     "333-444-5555",
+//     "Jodi\'s wife",
+//     "1000.00",
+//     "False"
+// );
+
+//*****Delete One Sub */
+Sub.deleteSub(147);

@@ -106,6 +106,62 @@ class Sub {
                 console.log("here are all the subs")
             })
     };
+
+    //UPDATE
+    static updateSub(
+        id,
+        Sub_Name,
+        Last_Name,
+        First_Name,
+        Language,
+        Qualifications,
+        Email,
+        Home_Phone,
+        Cell_Phone,
+        Comments,
+        Daily_Rate,
+        Inactive) {
+        return db.result(`
+                UPDATE Sub_Master
+                SET Sub_Name = $2,
+                Last_Name = $3,
+                First_Name = $4,
+                Language = $5,
+                Qualifications = $6,
+                Email = $7,
+                Home_Phone = $8,
+                Cell_Phone = $9,
+                Comments = $10,
+                Daily_Rate = $11,
+                Inactive = $12
+                WHERE id = $1;
+            `, [id,
+                Sub_Name,
+                Last_Name,
+                First_Name,
+                Language,
+                Qualifications,
+                Email,
+                Home_Phone,
+                Cell_Phone,
+                Comments,
+                Daily_Rate,
+                Inactive])
+            .then(() => {
+                console.log(`${Sub_Name} has been updated`)
+            })
+    };
+
+    //DELETE
+    static deleteSub(id) {
+        return db.one(`
+        DELETE FROM Sub_Master
+        WHERE id = $1;
+        `, [id])
+            .then(() => {
+                console.log(`Sub has been deleted`)
+            })
+    };
 }
 
 module.exports = Sub;
