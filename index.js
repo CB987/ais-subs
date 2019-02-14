@@ -18,7 +18,7 @@ const Sub = require('./models/Sub');
 //     "221B");
 
 //*****List All Faculty*/
-// Faculty.getAllFaculty()
+// Faculty.getAllFaculty();
 
 //*****Update One Faculty*/
 // Faculty.updateFacultyInfo(112,
@@ -32,4 +32,23 @@ const Sub = require('./models/Sub');
 // );
 
 //*****Delete One Faculty */
-Faculty.deleteFaculty(111)
+// Faculty.deleteFaculty(111)
+
+//SUB METHODS
+//*****Add One Sub */
+// Sub.addSub(
+//     "Holmes",
+//     "Holmes",
+//     "Sherlock",
+//     "English",
+//     "All of them",
+//     "holmes@sherlock.com",
+//     "777-999-0000",
+//     "333-444-5555",
+//     "best detective",
+//     "100.00",
+//     "False"
+// );
+
+//*****Retrieve All Subs */
+Sub.getSubs();
