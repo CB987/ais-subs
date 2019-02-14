@@ -118,7 +118,7 @@ class Faculty {
 
     //DELETE
     static deleteFaculty(id) {
-        return db.one(`
+        return db.result(`
             DELETE FROM Faculty_Master
             WHERE id = $1
         `, [id])

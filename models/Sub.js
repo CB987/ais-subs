@@ -154,7 +154,7 @@ class Sub {
 
     //DELETE
     static deleteSub(id) {
-        return db.one(`
+        return db.result(`
         DELETE FROM Sub_Master
         WHERE id = $1;
         `, [id])
