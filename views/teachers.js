@@ -15,6 +15,7 @@ function teachers(allTeachers) {
   return `
                     <div id="table_results">
                         <table class="shadow">
+                        <thead>
                             <tr>
                                 <th>Faculty Name</th>
                                 <th>Last Name</th>
@@ -23,6 +24,10 @@ function teachers(allTeachers) {
                                 <th>Grade</th>
                                 <th>Track</th>
                                 <th>Room</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
                                 ${allTeachers
                                   .map(teacher => {
                                     // console.log(teacher);
@@ -30,6 +35,7 @@ function teachers(allTeachers) {
                                   })
                                   .join("")}
                             </tr>
+                            </tbody>
                         </table>   
                     </div>
     `;
