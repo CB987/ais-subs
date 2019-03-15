@@ -29,6 +29,8 @@ app.get("/", (req, res) => {
   res.send(thePage);
 });
 
+//FACULTY METHODS
+
 app.get("/teachers", (req, res) => {
   //*****List All Faculty*/
   Faculty.getAllFaculty().then(allTeachers => {
@@ -40,7 +42,6 @@ app.get("/teachers", (req, res) => {
   });
 });
 
-//FACULTY METHODS
 //*****Add One Faculty*/
 // Faculty.addFaculty(
 //     "Clare",
@@ -71,6 +72,17 @@ app.get("/teachers", (req, res) => {
 // Faculty.deleteFaculty(111)
 
 //SUB METHODS
+
+app.get("/subs", (req, res) => {
+  //*****List All Faculty*/
+  Sub.getSubs().then(allSubs => {
+    // console.log(allTeachers);
+    // return allTeachers;
+    console.log("believe it");
+    const thePage = page(subs(allSubs));
+    res.send(thePage);
+  });
+});
 //*****Add One Sub */
 // Sub.addSub(
 //     "Holmes",
