@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/CB987/ais-subs#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
     "pg-promise": "^8.5.5"
   },
   "devDependencies": {

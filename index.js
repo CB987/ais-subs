@@ -1,10 +1,44 @@
-// require('dontenv').config();
-// const db = require('./models/db');
-// const db = require('./models/db');
-require('dotenv').config();
+require("dotenv").config();
 
-const Faculty = require('./models/Faculty');
-const Sub = require('./models/Sub');
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+// const db = require('./models/db');
+
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+const Faculty = require("./models/Faculty");
+const Sub = require("./models/Sub");
+
+const page = require("./views/page");
+const home = require("./views/home");
+const subs = require("./views/subs");
+const teachers = require("./views/teachers");
+
+//========
+//SERVING
+//========
+app.listen(4002, () => {
+  console.log("yep");
+});
+
+app.get("/", (req, res) => {
+  const thePage = page(home());
+  res.send(thePage);
+});
+
+app.get("/teachers", (req, res) => {
+  //*****List All Faculty*/
+  Faculty.getAllFaculty().then(allTeachers => {
+    // console.log(allTeachers);
+    // return allTeachers;
+    console.log("ummmm?");
+    const thePage = page(teachers(allTeachers));
+    res.send(thePage);
+  });
+});
 
 //FACULTY METHODS
 //*****Add One Faculty*/
@@ -18,7 +52,9 @@ const Sub = require('./models/Sub');
 //     "221B");
 
 //*****List All Faculty*/
-// Faculty.getAllFaculty();
+// Faculty.getAllFaculty().then(results => {
+//   console.log(results);
+// });
 
 //*****Update One Faculty*/
 // Faculty.updateFacultyInfo(112,
@@ -70,4 +106,4 @@ const Sub = require('./models/Sub');
 // );
 
 //*****Delete One Sub */
-Sub.deleteSub(146);
+// Sub.deleteSub(146);
