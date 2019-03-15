@@ -16,6 +16,7 @@ const page = require("./views/page");
 const home = require("./views/home");
 const subs = require("./views/subs");
 const teachers = require("./views/teachers");
+const leaveRequest = require("./views/leaveRequest");
 
 //========
 //SERVING
@@ -38,6 +39,14 @@ app.get("/teachers", (req, res) => {
     // return allTeachers;
     console.log("ummmm?");
     const thePage = page(teachers(allTeachers));
+    res.send(thePage);
+  });
+});
+
+app.get("/leaveRequest", (req, res) => {
+  Faculty.getAllFaculty().then(allTeachers => {
+    console.log("leave request form");
+    const thePage = page(leaveRequest(allTeachers));
     res.send(thePage);
   });
 });

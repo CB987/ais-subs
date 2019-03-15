@@ -20,24 +20,30 @@ function subs(allSubs) {
   return `
         <div id="table_results">
             <table class="shadow">
+            <thead>
                 <tr>
-                    <th>Sub Name<th>
-                    <th>Last Name<th>
-                    <th>First Name<th>
-                    <th>Language<th>
-                    <th>Qualifications<th>
-                    <th>Email<th>
-                    <th>Home Phone<th>
-                    <th>Cell Phone<th>
-                    <th>Comments<th>
-                    <th>Daily Rate<th>
-                    <th>Inactive<th>
+                    <th>Sub Name</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Language</th>
+                    <th>Qualifications</th>
+                    <th>Email</th>
+                    <th>Home Phone</th>
+                    <th>Cell Phone</th>
+                    <th>Comments</th>
+                    <th>Daily Rate</th>
+                    <th>Inactive</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
                     ${allSubs
                       .map(oneSub => {
                         return subRow(oneSub);
                       })
                       .join("")}
                     </tr>
+                    </tbody>
                     </table>
                     </div>
     `;

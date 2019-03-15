@@ -71,7 +71,9 @@ class Faculty {
     return db
       .any(
         `
-        SELECT * FROM Faculty_Master`
+        SELECT * FROM Faculty_Master
+        ORDER BY Last_Name, First_Name
+        `
       )
       .then(async resultsArray => {
         // console.log(resultsArray);
